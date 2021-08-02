@@ -28,6 +28,9 @@
         <li>
             <a href="/users"><i class="fa fa-fw fa-user"></i>  Users</a>
         </li>
+        <li>
+            <a href="/menus"><i class="fa fa-fw fa-user"></i>  Menus</a>
+        </li>
     </ul>
 </nav>
 <style type="text/css">

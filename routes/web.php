@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,10 +31,16 @@ Route::get('/posts/index2', [PostController::class, 'index2']);
 Route::resource('posts', PostController::class);
 
 //Users
+Route::get('/users/permission/{id}', [UserController::class, 'permission']);
+//Route::get('/users/permission/{id}','UserController@show_post')->name('post.show');
 Route::resource('users', UserController::class);
+
 
 //Role
 Route::get('/roles/index', [RoleController::class, 'index']);
 Route::resource('roles', RoleController::class);
+
+//Menus
+Route::resource('menus', MenuController::class);
 
 require __DIR__.'/auth.php';

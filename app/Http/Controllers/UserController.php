@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
@@ -76,6 +77,17 @@ class UserController extends Controller
         // echo '<pre>';
         // print_r($user);die;
         return view('users.show',compact('user'));
+    }
+
+    public function permission($id)
+    {
+        $user=User::find($id);
+        $menus=Menu::all()->sortBy('title');
+        
+        // echo '<pre>';
+        // print_r($menus[0]->title);
+        // die;
+        return view('users.permission',compact('user', 'menus'));
     }
 
     /**

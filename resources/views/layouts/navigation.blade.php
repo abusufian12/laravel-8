@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-black border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,6 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                        <!-- <i class="fa fa-home"></i> -->
                     </a>
                 </div>
 
@@ -17,22 +18,22 @@
                             <div class="container-fluid">
                                 
                                 <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                    <i class="fas fa-align-left"></i>
+                                    <i class="fa fa-align-left"></i>
                                     <span>Menu</span>
                                 </button>
                             </div>
                         </nav>
                     </div>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <!-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
+                    </x-nav-link> -->
 
-                    <a  href="{{url('/posts')}}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                    <!-- <a  href="{{url('/posts')}}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                         Posts
                     </a>
                     <a  href="{{url('/users')}}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                         Users
-                    </a>
+                    </a> -->
                 </div>
             </div>
 

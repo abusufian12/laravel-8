@@ -30,15 +30,34 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                <input type="text" name="title" class="form-control" placeholder="Enter Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Status:</strong>
-                <input type="text" name="status" class="form-control" placeholder="Enter Status">
+                <strong>Icon:</strong>
+                <input type="text" name="icon" class="form-control" placeholder="Enter Icon">
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>URL:</strong>
+                <input type="text" name="url" class="form-control" placeholder="Enter URL">
+            </div>
+        </div>
+        
+
+        <div class="mt-4">
+            <x-label for="status" :value="__('Status')" />
+
+            <select class="form-control m-bot15" name="status">
+                    @foreach($status as $status_value)
+                        <option value="{{ $status_value }}" >{{ $status_value }}</option>    
+                    @endforeach    
+            </select>
+
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use App\Helpers\Helper;
 
 class MenuController extends Controller
 {
@@ -28,7 +29,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menus.create');
+        $status = Helper::roleStatus();
+        return view('menus.create',compact('status'));
     }
 
     /**
@@ -40,7 +42,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            'name' => 'required',
+            'title' => 'required',
             'status' => 'required',
         ]);
     
@@ -71,7 +73,8 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        return view('menus.edit',compact('menu'));
+        $status = Helper::roleStatus();
+        return view('menus.edit',compact('menu', 'status'));
     }
 
     /**
@@ -84,7 +87,7 @@ class MenuController extends Controller
     public function update(Request $request, Menu $menu)
     {
         $request->validate([
-            'name' => 'required',
+            'title' => 'required',
             'status' => 'required',
         ]);
     
